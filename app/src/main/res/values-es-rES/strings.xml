@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Clase10</string>
+    <string name="hello_blank_fragment">hola fragmento blanco</string>
+    <string name="appwidget_text">ejemplo</string>
+    <string name="add_widget">añadir widget</string>
+    <string name="app_widget_description">esto es una descripcion app widget</string>
+</resources>
