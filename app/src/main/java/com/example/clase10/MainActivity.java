@@ -20,6 +20,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity implements SensorEventListener {
 
 
@@ -56,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
         }
 
+
+        verFormateoDatos();
     }
 
 
@@ -138,4 +146,48 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         startActivity(Intent.createChooser(intent, "Compartir con"));
     }
 
+    private void verFormateoDatos(){
+
+        //Formateo de Números con Separadores de Miles
+        NumberFormat numberFormat = NumberFormat.getNumberInstance();
+        String formattedNumber = numberFormat.format(1234567.89); // Formateará a "1,234,567.89" dependiendo de la configuración regional
+        TextView numberView = (TextView) findViewById(R.id.numberTextView);
+        numberView.setText(formattedNumber);
+
+
+        //Formateo de Porcentajes
+        NumberFormat percentFormat = NumberFormat.getPercentInstance();
+        String formattedPercentage = percentFormat.format(0.85); // Formateará a "85%" dependiendo de la configuración regional
+        TextView percentageView = (TextView) findViewById(R.id.percentageTextView);
+        percentageView.setText(formattedPercentage);
+
+
+        //Formateo de Fechas en un Formato Personalizado
+        SimpleDateFormat customDateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        String formattedDate = customDateFormat.format(new Date()); // Ejemplo: "30/01/2025"
+        TextView dateView = (TextView) findViewById(R.id.customDateTextView);
+        dateView.setText(formattedDate);
+
+
+        //Formateo de Fechas con Hora
+        DateFormat dateTimeFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT);
+        String formattedDateTime = dateTimeFormat.format(new Date()); // Ejemplo: "January 30, 2025 12:30 PM"
+        TextView dateTimeView = (TextView) findViewById(R.id.dateTimeTextView);
+        dateTimeView.setText(formattedDateTime);
+
+
+        //Formateo de Moneda en una Configuración Regional Específica
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(Locale.US);
+        String formattedCurrency = currencyFormat.format(1234.56); // Ejemplo: "$1,234.56"
+        TextView currencyView = (TextView) findViewById(R.id.currencyTextView);
+        currencyView.setText(formattedCurrency);
+
+
+        //Formateo de Hora en 24 horas
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        String formattedTime = timeFormat.format(new Date()); // Ejemplo: "14:30"
+        TextView timeView = (TextView) findViewById(R.id.timeTextView);
+        timeView.setText(formattedTime);
+
+    }
 }

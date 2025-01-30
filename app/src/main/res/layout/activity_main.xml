@@ -11,24 +11,24 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
+        android:layout_marginBottom="10dp"
         android:onClick="botonesFragment"
         android:text="Fragment1"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
-        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/numberTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="46dp"
+        android:layout_marginBottom="17dp"
         android:onClick="botonesFragment"
         android:text="Fragment2"
         app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/textViewX"
-        app:layout_constraintTop_toBottomOf="@+id/textViewY" />
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <FrameLayout
         android:id="@+id/fragment_container"
@@ -40,29 +40,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3">
+        app:layout_constraintTop_toBottomOf="@+id/customDateTextView">
 
     </FrameLayout>
 
     <TextView
         android:id="@+id/textViewX"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="22dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="15dp"
         android:hint="x"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textViewY"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewY"
         app:layout_constraintEnd_toStartOf="@+id/textViewY"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewY"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="57dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="74dp"
         android:hint="y"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toStartOf="@+id/textViewZ"
         app:layout_constraintStart_toEndOf="@+id/textViewX"
         app:layout_constraintTop_toBottomOf="@+id/textViewZ" />
@@ -83,12 +86,85 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="194dp"
-        android:layout_marginBottom="397dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="50dp"
         android:onClick="compartirDatos"
         android:text="Compartir Datos"
-        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/textViewZ"
+        app:layout_constraintTop_toBottomOf="@+id/textViewY" />
+
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/percentageTextView"
+        app:layout_constraintEnd_toStartOf="@+id/dateTimeTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/percentageTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="12dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/customDateTextView"
+        app:layout_constraintEnd_toStartOf="@+id/currencyTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberTextView" />
+
+    <TextView
+        android:id="@+id/customDateTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="93dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_container"
+        app:layout_constraintEnd_toStartOf="@+id/timeTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentageTextView" />
+
+    <TextView
+        android:id="@+id/currencyTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="190dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/percentageTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/percentageTextView"
+        app:layout_constraintTop_toTopOf="@+id/percentageTextView" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="190dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/customDateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/customDateTextView"
+        app:layout_constraintTop_toTopOf="@+id/customDateTextView" />
+
+    <TextView
+        android:id="@+id/dateTimeTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginBottom="10dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/currencyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/numberTextView"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
